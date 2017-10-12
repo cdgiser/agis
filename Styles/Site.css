@@ -1,0 +1,26 @@
+﻿*{margin:0px;padding:0px;}
+.agis{width:1000px;height:900px;margin:0 auto;}
+/*顶部*/
+.atop{width:1000px;height:90px;}
+.atopLogo{position:relative;float:left;margin-left:160px;margin-top:10px;width:150px;height:50px;}
+.atopSearch{position:relative;float:left;width:420px;height:50px;margin-left:40px;margin-top:20px;}
+.aTbdtxt{height: 34px;padding: 6px 12px;font-size: 14px;line-height: 1.5;color: #555;border: 1px solid #ccc;border-radius: 4px;}
+.aTbdSub{width: 80px;height: 32px;font-size: medium;}
+
+.aTWeather{position:relative;float:left;width:150px;height:50px;margin-left:20px;margin-top:10px;}
+/*中部body*/
+.abody{position:relative;float:left;background:grey;width:1000px;height:990px;margin:0 auto;}
+/*中部左边*/
+.aBLeft{position:relative;float:left;width:200px;height:990px;background:#bcd0c4;padding-top: 23px;}
+.aBLMap{position:relative;float:left;width:200px;height:193px;padding-left:25px;padding-top:10px;}
+.aBLMapTxt{margin-left: 40px;}
+
+
+/*中部右边*/
+.aBRight{position:relative;float:left;width:800px;background:#efefef}
+.aBRTitle{position:relative;float:left;width:800px;height:30px;background:#a49bc7;padding}
+
+
+/*底部foot*/
+.aFoot{position:relative;float:left;width:1000px;height:130px;background:#c8dac4;}
+.aFcnzz{position:relative;float:left;width:50px;height:12px;margin-left:700px;margin-top:50px;}

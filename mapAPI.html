@@ -1,0 +1,91 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Look of Map APIs</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+     <script type="text/javascript" async defer src="http://maps.google.cn/maps/api/js?key=AIzaSyDzKL-zyyc5Zb7wqQ6Ml3MRRQxUa9SjgAs"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=EKELl67dRsNFeFdY39Is6Ckd&services=&t=20170517145936"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=20d12be71fe693270878e1eefbe12527"></script> 
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+
+    <script type='text/javascript' src='https://cn.bing.com/api/maps/mapcontrol?callback=loadMapScenario' async defer></script>
+    <script type="text/javascript" src="http://api.tianditu.com/api?v=4.0"></script>
+     <script type="text/javascript" src="http://api.go2map.com/maps/js/api_v2.5.1.js"></script>
+
+</script>
+    <script src="Scripts/mapMain.js"></script>
+    <link rel="stylesheet" href="Styles/mapStyle.css" type="text/css" />
+    <script>
+        function init() {
+
+            init_google();
+            init_baidu();
+            init_gaode();
+            init_qq();
+
+            init_bing();
+            init_tianditu();
+            
+            init_sogou();
+
+            init_event();
+        }
+        window.onload = init;
+    </script>
+</head>
+<body id="maps">
+    <table class="table">
+        <tr class="row">
+            <td class="col">
+                <div id="google" class="map"></div>
+            </td>
+            <td class="col">
+                <div id="baidu" class="map"></div>
+            </td>
+            <td class="col">
+                <div id="gaode" class="map"></div>
+            </td>
+            <td class="col">
+                <div id="qq" class="map"></div>
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="col">
+                <div id="bing" class="map"></div>
+            </td>
+            <td class="col">
+                <div id="tianditu" class="map"></div>
+            </td>
+            <td class="col">
+                <div id="sogou" class="map"></div>
+            </td>
+            <td class="col">
+                <div class="map">
+                    <table id="tb">
+                        <tr>
+                            <td>Google Maps</td>
+                            <td>Baidu Maps</td>
+                            <td>MapWorld</td>
+                            <td>Bing Maps</td>
+                        </tr>
+                        <tr>
+                            <td>Here</td>
+                            <td>Leaflet<br />
+                                Cloudmade</td>
+                            <td>Ali Maps<br />
+                                </td>
+                            <td><div>
+                                    <a href="http://hmfly.info/2013/01/27/the-look-of-map-apis/">The Look of Map APIs</a>, 
+                   <a href="http://weibo.com/hmfly">hmfly</a>@<a href="http://dky.njnu.edu.cn/">nnu</a>&<a href="http://vgekl.njnu.edu.cn/">vge</a>
+                                </div></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

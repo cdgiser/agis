@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>地图APIs</title>
@@ -38,7 +38,10 @@
             $(".CurrentPosition").click(function () {
                 alert("^_^! 待开发...");
                 if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(MapLocation);
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var GooglePos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        alert("aaa" + position.coords.latitude);
+                    });
                 } else { 
                 alert("当前浏览器不支持定位！")
                 }
@@ -48,10 +51,7 @@
                 //                map_baidu.setMapType(BMap.BMAP_HYBRID_MAP);
             });
 
-        }); var MapLocation = function (position) {
-            var GooglePos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            alert("aaa" + position.coords.latitude);
-        }
+        });
 </script>
 </head>
 <body id="maps">

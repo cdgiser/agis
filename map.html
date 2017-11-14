@@ -39,8 +39,8 @@
                 alert("^_^! 待开发...");
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function (position) {
-                        var GooglePos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                        alert("aaa" + position.coords.latitude);
+//                        var GooglePos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        alert("位置：" + position.coords.longitude + "" + position.coords.latitude);
                     });
                 } else { 
                 alert("当前浏览器不支持定位！")
@@ -67,7 +67,7 @@
             <td class="col"><div id="sogou" class="map"></div></td>
             <td class="col"><div id="google" class="map"></div></td>
             <td class="col" valign="top"><div class="mapcontrol" style="float:left;padding-top:20px;margin-top:20px;margin-left:20px;">
-            <div class="MapCoord"></div>
+            <div class="MapCoord"></div><div class="MapEle"></div>
             <div><button class="CurrentPosition">定位</button><button class="MapType">卫星</button></div>
             </td>
        </tr>

@@ -1,4 +1,4 @@
-﻿var map_google;
+var map_google;
 var map_baidu;
 var map_gaode;
 var map_qq;
@@ -21,16 +21,36 @@ Point.prototype.toTianDiTu = function () { return new T.LngLat(this.lng - 0.0065
 
 var init_point = new Point(34.76, 113.65); 
 var init_level = 15;
-
+var google_ele;//高程
 function init_event() {
     map_google.addListener("drag", extent_changed);
     map_google.addListener("zoom_changed", extent_changed);
 }
 
-function extent_changed() {
+function displayLocationElevation(location, elevator) {
+    var eleRes = "";
+    elevator.getElevationForLocations({
+        'locations': [location]
+    }, function (results, status) {
+        if (status === 'OK') {
+            // Retrieve the first result
+            if (results[0]) {
+                $(".MapEle").html('高程为：' + results[0].elevation.toFixed(2) + '米');
+            } else {
+                $(".MapEle").html = '无高程信息！';
+            }
+        } else {
+            $(".MapEle").html = '获取高程失败: ' + status;
+        }
+        return eleRes;
+    });
+}
+
+function extent_changed(event) {
     var google_level = map_google.getZoom();
     var google_latlng = map_google.getCenter();
     var center = new Point(google_latlng.lat(), google_latlng.lng());
+
     map_baidu.centerAndZoom(center.toBaidu(), google_level + 1);
     map_gaode.setZoomAndCenter(google_level, center.toGaode());
     map_qq.zoomTo(google_level); map_qq.setCenter(center.toQQ());
@@ -39,7 +59,9 @@ function extent_changed() {
     map_sogou.setCenter(center.toSoGou(), google_level);
     map_bing.setView({ center: center.toBing(), zoom: google_level });
 
-    $(".MapCoord").html("google地图<br/>地图级别：" + google_level + "<br/>中心点坐标：<br/>经度：" + center.lng + "<br/>纬度：" + center.lat + "<br/>东经：" + coord_convert(center.lng) + "E<br/>北纬：" + coord_convert(center.lat) + "N");
+    displayLocationElevation(center, google_ele);
+    $(".MapCoord").html("google地图<br/>地图级别：" + google_level + "<br/>中心点坐标：<br/>经度：" + center.lng + "<br/>纬度：" + center.lat +
+    "<br/>东经：" + coord_convert(center.lng) + "E<br/>北纬：" + coord_convert(center.lat) + "N<br/>");
 }
 
 //经纬度 十进制转为度分秒
@@ -96,6 +118,7 @@ function init_google() {
          center: { lat: 34.76, lng: 113.65 },
          zoom: 8
      });
+     google_ele= new google.maps.ElevationService;
  }
 
 

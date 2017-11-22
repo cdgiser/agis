@@ -100,7 +100,7 @@ function init_qq() {
 
 function init_bing() {
       map_bing = new Microsoft.Maps.Map('#bing', {
-          credentials: '4LvGfLfFAPIh6UOpzoop〜u4K6PYrcVvRdaaqQ11-mYw〜AuqQZT9Nu0bW832qNg66FEP4k-Z9gtiVG0iFUXnQWeQe4BoaM01bnn_KMXGUzVke'
+          credentials: '4LvGfLfFAPIh6UOpzoop~u4K6PYrcVvRdaaqQ11-mYw~AuqQZT9Nu0bW832qNg66FEP4k-Z9gtiVG0iFUXnQWeQe4BoaM01bnn_KMXGUzVke'
     });
 }
 
